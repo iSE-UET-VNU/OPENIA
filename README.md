@@ -6,19 +6,16 @@
 
 ## Introduction
 
-In this paper, we introduce OPENIA, a novel white-box (open-box) framework that leverages these internal representations to assess the correctness of LLM-generated code. OPENIA systematically analyzes the intermediate states of representative opensource LLMs specialized for code, including DeepSeek-Coder,CodeLlama, and MagicCoder, across diverse code generation benchmarks.
+In this paper, we introduce OPENIA, a novel white-box (open-box) framework that leverages these internal representations to assess the correctness of LLM-generated code. By systematically analyzing the intermediate states of representative open-source code LLMs, including DeepSeek-Coder, Code Llama, and Magicoder, across diverse code generation benchmarks, we found that these internal representations encode latent information, which strongly correlates with the correctness
+of the generated code. 
 
-Experimental results demonstrate that OPENIA consistently outperforms baseline models, achieving higher accuracy, precision, recall, and F1Scores with up to a 2X improvement in standalone code generation and a 46% enhancement in repository-specific scenarios. By unlocking the potential of in-process signals, OPENIA paves the way for more proactive and efficient quality assurance mechanisms in LLM-assisted code generation.
+Our results show that OPENIA consistently outperforms baseline models, achieving higher accuracy, precision, recall, and F1-Scores with up to a 2X improvement in standalone code generation and a 3X enhancement in repository-specific scenarios. By unlocking the potential of in-process signals, OPENIA paves the way for more proactive and efficient quality assurance mechanisms in LLM-assisted code generation.
 
 #### Paper: https://arxiv.org/abs/2501.12934
 
 ## The architecture
-![](figs/framework.png)
 
-In RAMBO, procedure retrieve consists of two main steps,
-*Essential Code Element Identification (EEI)* and *Relevant Usage Extraction (RUE)*. For the given infilling method m in repo R, *EEI* identifies the repo-specific essential code elements (e.g., methods, attributes, or types) as “materials” to form m’s body. After that, *RUE* extracts these elements’ usages (i.e., the methods using those elements)
-as “recipes” of these materials to form the method body
-and then ranks these usages based on the relevancy to m. Then, the identified essential elements and their relevant usages are utilized to construct the context before feeding it into a CodeLLM to generate method body.
+![](figs/framework.png)
 
 # Project Overview
 
