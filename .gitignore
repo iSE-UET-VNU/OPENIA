@@ -67,3 +67,4 @@ vastai/*.zip
 jaist
 !benchmark/DevEval/data/train_project_ids.txt
 !benchmark/MBPP/data/mbpp_test_task_ids.txt
+datasets/
